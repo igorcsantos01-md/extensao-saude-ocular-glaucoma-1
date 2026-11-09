@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-serif-academic: 'Source Serif 4', Georgia, serif;
+    --font-cinzel: 'Cinzel', Georgia, serif;
+    --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #0f172a;
+    background-color: #f8fafc;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.font-serif-academic {
+  font-family: var(--font-serif-academic);
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.font-cormorant {
+  font-family: var(--font-cormorant);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Proportion and print styling for A4 Landscape Certificates (297mm x 210mm -> aspect ratio 1.4142857) */
+.a4-landscape-sheet {
+  aspect-ratio: 297 / 210;
+  width: 100%;
+  max-width: 1122px;
+  background-color: #FAF9F6;
+  color: #111827;
+  position: relative;
+  box-sizing: border-box;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  body {
+    background: #FAF9F6 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only-container {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .a4-print-page {
+    width: 297mm !important;
+    height: 210mm !important;
+    max-width: none !important;
+    page-break-after: always;
+    break-after: page;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .a4-print-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+}

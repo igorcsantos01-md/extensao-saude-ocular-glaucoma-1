@@ -1,0 +1,6 @@
+{
+  "name": "Portal de Extensão Mente e Saúde — Validador e Certificados Oficiais",
+  "description": "Plataforma Interinstitucional de Extensão, Educação em Saúde Digital, Coleta de Dados Populacionais, Combate a Fake News e Validação Pública de Certificados (Editora Mente e Saúde & Centro Profissionalizante Maria Dalva de Araújo).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
